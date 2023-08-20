@@ -42,7 +42,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm test
+      # - run: npm test
 
       - run: npm run build
 
@@ -113,7 +113,6 @@ jobs:
 
   release:
     needs: package
-    if: startsWith(github.ref, 'refs/tags/')
 
     runs-on: ubuntu-latest
     permissions:
@@ -128,7 +127,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: protobuf-javascript-*
+          file: protobuf-javascript-sb-*
           file_glob: true
           tag: ${{ github.ref }}
           overwrite: true

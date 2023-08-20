@@ -476,7 +476,7 @@ std::string JSIdent(const GeneratorOptions& options,
     result += "Map";
   } else if (!drop_list && field->is_repeated()) {
     // Repeated field.
-    result += "List";
+    result += "";
   }
   return result;
 }
